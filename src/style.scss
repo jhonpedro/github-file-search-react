@@ -116,7 +116,6 @@ mark {
   .search-box {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 1rem;
 
     .slash {
@@ -127,7 +126,8 @@ mark {
     input {
       width: 50%;
       font-size: 1.6rem;
-      padding: 0.5rem;
+      padding-left: 0.5rem;
+      line-height: 1.6;
       border: none;
       letter-spacing: 1px;
     }
