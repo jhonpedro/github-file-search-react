@@ -48,6 +48,8 @@ mark {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $light-grey;
 }
 
 .header {
@@ -87,7 +89,7 @@ mark {
 
     .file-icon {
       vertical-align: middle;
-      margin-right: 0.5rem;
+      margin: 0 1.5rem;
     }
 
     .arrow-icon {

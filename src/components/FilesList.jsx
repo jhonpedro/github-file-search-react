@@ -1,11 +1,17 @@
 import React from "react"
 import ListItem from "./ListItem"
 
-export default ({ files }) => (
+export default ({ files, isSearchView, counter }) => (
     <div className="list">
         { files.length > 0 ? (
-            files.map(file => {
-                return <ListItem key={ file.id } { ...file } />
+            files.map((file, index) => {
+                return <ListItem
+                    key={ file.id }
+                    { ...file }
+                    index={ index }
+                    isSearchView={ isSearchView }
+                    counter={ counter }
+                />
             })
         ) : (
                 <div>
