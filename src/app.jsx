@@ -60,12 +60,19 @@ export default class App extends React.Component {
         let list
 
         if (searchTerm) {
-            list = Files.filter(
-                file => (
-                    file.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 &&
-                    file.type === "file"
-                )
-            )
+            const pattern = new RegExp(searchTerm, "gi")
+            list = Files
+                .filter(
+                    file => (
+                        file.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 &&
+                        file.type === "file"
+                    )
+                ).map(file => {
+                    return {
+                        ...file,
+                        name: file.name.replace(pattern, match => `<mark>${match}</mark>`)
+                    }
+                })
         } else {
             list = Files.filter(file => file.type === "file")
         }

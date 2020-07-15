@@ -21,7 +21,7 @@ export default ({ type, name, comment, modified_time, isSearchView, index, count
                                 <AiOutlineFile size="18" />
                             ) }
                     </span>
-                    <span className="label">{ name }</span>
+                    <span className="label" dangerouslySetInnerHTML={ { __html: name } }></span>
                 </div>
                 { !isSearchView && (
                     <React.Fragment>
